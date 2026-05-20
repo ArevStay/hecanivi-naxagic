@@ -54,6 +54,5 @@ const asteroids = [
     const firstTwo = asteroids.slice(0, 2);
     console.log(firstTwo);
 
- const names= asteroids.filter(asteroid => asteroid.hazardous).map(asteroid => asteroid.name);
- console.log(names);
-    
+//  const name = asteroids.filter(asteroid => asteroid.hazardous === true).map(asteroid => asteroid.name);
+//  console.log(name);
