@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 const name = 'Space Dashboard';
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function GoogleMap() {
@@ -73,6 +73,7 @@ export default function App() {
      
    <ISSCard latitude="42.36" longitude="72.05" />
    <SpaceCard name="Artemis II" status="Active" />
+   <ISSTracker />
    <Counter />
    <GoogleMap />
    <div className="split-section">
@@ -109,5 +110,12 @@ function Counter() {
   )}
 
 
+function ISSTracker() {
+ const [location, setLocation] = useState(null)
 
-
+  useEffect(() => {
+    fetch("https://api.wheretheiss.at/v1/satellites/25544")
+      .then(r => r.json())
+      .then(data => setLocation(data))
+  }, [])
+}
