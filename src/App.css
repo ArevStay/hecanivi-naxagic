@@ -60,3 +60,45 @@ body {
   color: #ef4444;
 }
 
+/* Compact, styled ISS card positioned top-right inside the Dashboard */
+.Dashboard {
+  position: relative;
+}
+
+.iss-card {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 220px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+  color: #e6fffa;
+  z-index: 20;
+}
+
+.iss-card h2 {
+  font-size: 0.82rem;
+  margin: 0 0 6px 0;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.iss-card p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .iss-card {
+    position: static;
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
