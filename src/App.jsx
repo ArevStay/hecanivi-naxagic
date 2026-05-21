@@ -65,7 +65,10 @@ export default function App() {
   return (
     <div className="Dashboard">
       <h1>My Space Dashboard</h1>
-      <p>{today.toLocaleDateString()}</p>
+      {/* <p>{today.toLocaleDateString()}</p> */}
+      <p>
+  {new Date().toLocaleDateString("ru-RU")}
+</p>
      {name}
      
    <ISSCard latitude="42.36" longitude="72.05" />
@@ -85,15 +88,15 @@ export default function App() {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function getCurrentDate() {
-  const today = new Date();
-  return today;
-}
+// function getCurrentDate() {
+//   const today = new Date();
+//   return today;
+// }
 
-const today = getCurrentDate();
+// const today = getCurrentDate();
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// this is my Counter component
 
 
 function Counter() {
@@ -104,3 +107,7 @@ function Counter() {
     Clicked {count} times     
     </button>
   )}
+
+
+
+
