@@ -1,7 +1,7 @@
 import './App.css';
-
+import { useState } from 'react';
 const name = 'Space Dashboard';
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function GoogleMap() {
   const mapSrc =
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36505916.40326209!2d70.80861629077812!3d35.75397494919688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e2073c5f866a9d%3A0xfc469f3d9301b70c!2sN.A.S.A!5e1!3m2!1sen!2sam!4v1779373007286!5m2!1sen!2sam';
@@ -22,6 +22,9 @@ function GoogleMap() {
   );
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function ISSCard(props){
   return(
     <div className="card iss-card">
@@ -31,6 +34,8 @@ function ISSCard(props){
     </div>
   );
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function SpaceCard(props){
   return(
@@ -53,17 +58,19 @@ function SpaceCard(props){
 
 
 
-
 // this is my HTML
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 export default function App() {
   return (
     <div className="Dashboard">
       <h1>My Space Dashboard</h1>
-      <p>20.05.2026</p>
+      <p>{today.toLocaleDateString()}</p>
      {name}
      
    <ISSCard latitude="42.36" longitude="72.05" />
    <SpaceCard name="Artemis II" status="Active" />
+   <Counter />
    <GoogleMap />
    <div className="split-section">
      <div className="split-half"></div>
@@ -76,7 +83,24 @@ export default function App() {
   );
 }
 
-/////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function getCurrentDate() {
+  const today = new Date();
+  return today;
+}
+
+const today = getCurrentDate();
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+    Clicked {count} times     
+    </button>
+  )}
