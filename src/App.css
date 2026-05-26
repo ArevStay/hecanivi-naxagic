@@ -1,48 +1,149 @@
 h1 {
   font-size: 2rem;
-  color: #4ade80;
+  color: #6f00ff;
   margin-bottom: 20px;
   letter-spacing: 0.1em;
+
+  text-shadow:
+    0 0 10px rgba(111, 0, 255, 0.7),
+    0 0 20px rgba(76, 201, 255, 0.3);
+
+  text-align: center;
 }
+
 body {
   background: #0a0a0a;
   color: white;
   font-family: monospace;
   margin: 0;
   padding: 20px;
+
+  overflow-x: hidden;
 }
 
-.dashboard h1 {
-  font-size: 2rem;
-  color: #4ade80;
-  margin-bottom: 20px;
-  letter-spacing: 0.1em;
+/* SPACE BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#6f00ff 1px, transparent 1px),
+    radial-gradient(#4cc9ff 2px, transparent 2px);
+
+  background-size:
+    120px 120px,
+    180px 180px,
+    260px 260px;
+
+  opacity: 0.25;
+  pointer-events: none;
 }
 
+/* DASHBOARD */
+.Dashboard {
+  position: relative;
+}
+
+/* ISS CARD */
+.iss-card {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 220px;
+
+  padding: 12px 14px;
+
+  background: rgba(10, 10, 25, 0.92);
+
+  border: 1px solid rgba(111,0,255,0.18);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 20px rgba(0,0,0,0.4);
+
+  z-index: 100;
+}
+
+.iss-card h2 {
+  font-size: 0.8rem;
+
+  margin-bottom: 8px;
+
+  text-align: center;
+
+  color: #9f7bff;
+
+  letter-spacing: 0.08em;
+}
+
+.iss-card p {
+  font-size: 0.85rem;
+
+  margin: 4px 0;
+
+  text-align: center;
+
+  color: #f3f3ff;
+}
+
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
+/* CARDS */
 .card {
-  background: #141414;
-  border: 1px solid #222;
-  border-radius: 8px;
-  padding: 16px;
+  background: linear-gradient(180deg, #060511, #0b0520);
+
+  border: 1px solid rgba(99, 102, 241, 0.12);
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  box-shadow:
+    0 0 25px rgba(111, 0, 255, 0.18),
+    0 0 60px rgba(76, 201, 255, 0.08);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 0 35px rgba(111, 0, 255, 0.35),
+    0 0 80px rgba(76, 201, 255, 0.14);
 }
 
 .card h2 {
-  color: #4ade80;
-  font-size: 0.85rem;
+  color: #6600ff;
+
+  font-size: 0.9rem;
+
   letter-spacing: 0.12em;
+
   text-transform: uppercase;
+
   margin-bottom: 12px;
+
+  text-align: center;
 }
 
 .card p {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  text-align: center;
 }
 
 .label {
@@ -60,45 +161,300 @@ body {
   color: #ef4444;
 }
 
-/* Compact, styled ISS card positioned top-right inside the Dashboard */
-.Dashboard {
+/* SOLAR SYSTEM */
+.solar-system-wrapper {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.solar-system {
   position: relative;
+  width: min(90vw, 640px);
+  height: min(90vw, 640px);
+  min-height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 248, 220, 0.06), transparent 55%);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.04);
+  overflow: visible;
 }
 
-.iss-card {
+.sun {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 220px;
-  padding: 10px 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
-  color: #e6fffa;
-  z-index: 20;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe27d 0%, #ffae2d 50%, #ff5600 100%);
+  box-shadow: 0 0 40px rgba(255, 148, 0, 0.5);
 }
 
-.iss-card h2 {
-  font-size: 0.82rem;
-  margin: 0 0 6px 0;
-  color: #34d399;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 16s linear infinite;
 }
 
-.iss-card p {
-  margin: 0;
-  font-size: 0.98rem;
+.orbit-mercury { width: 120px; height: 120px; animation-duration: 8s; }
+.orbit-venus { width: 175px; height: 175px; animation-duration: 12s; }
+.orbit-earth { width: 235px; height: 235px; animation-duration: 16s; }
+.orbit-mars { width: 295px; height: 295px; animation-duration: 22s; }
+.orbit-jupiter { width: 380px; height: 380px; animation-duration: 32s; }
+.orbit-saturn { width: 465px; height: 465px; animation-duration: 42s; }
+
+.planet {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.2);
+}
+
+.mercury { width: 10px; height: 10px; background: #b9b9b9; }
+.venus { width: 14px; height: 14px; background: #d9b36f; }
+.earth { width: 16px; height: 16px; background: radial-gradient(circle, #7fc8ff 15%, #2a6fca 80%); }
+.mars { width: 12px; height: 12px; background: #d04f32; }
+.jupiter { width: 28px; height: 28px; background: radial-gradient(circle, #d8b382 20%, #a86e30 80%); }
+.saturn { width: 24px; height: 24px; background: radial-gradient(circle, #e9d4a2 20%, #b7844e 80%); }
+
+.solar-legend {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 10px;
+  width: min(100%, 640px);
   color: #cbd5e1;
-  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 720px) {
+.solar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.solar-legend .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.solar-legend .mercury { background: #b9b9b9; }
+.solar-legend .venus { background: #d9b36f; }
+.solar-legend .earth { background: #7fc8ff; }
+.solar-legend .mars { background: #d04f32; }
+.solar-legend .jupiter { background: #d8b382; }
+.solar-legend .saturn { background: #e9d4a2; }
+
+@keyframes orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* IMAGE + PEOPLE */
+.big-bottom-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+
+  gap: 22px;
+
+  width: 100%;
+  max-width: 1300px;
+
+  margin: 40px auto;
+}
+
+.bottom-panel {
+  background: linear-gradient(
+    180deg,
+    rgba(7, 7, 18, 0.96),
+    rgba(10, 10, 25, 0.96)
+  );
+
+  border-radius: 24px;
+
+  padding: 22px;
+
+  border: 1px solid rgba(111,0,255,0.12);
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,0.45);
+}
+
+.bottom-panel h2 {
+  text-align: center;
+
+  color: #9f7bff;
+
+  margin-bottom: 18px;
+
+  letter-spacing: 0.08em;
+
+  font-size: 1.1rem;
+}
+
+.panel-left img {
+  width: 100%;
+
+  height: auto;
+
+  max-height: 700px;
+
+  object-fit: contain;
+
+  border-radius: 18px;
+
+  display: block;
+
+  background: black;
+}
+
+.panel-left h3 {
+  margin-top: 16px;
+
+  text-align: center;
+
+  color: white;
+
+  font-size: 1rem;
+}
+
+.panel-right ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.panel-right li {
+  background: rgba(18,18,40,0.7);
+
+  border: 1px solid rgba(111,0,255,0.12);
+
+  border-radius: 14px;
+
+  padding: 14px 16px;
+
+  text-align: center;
+
+  color: #ececff;
+
+  font-size: 0.95rem;
+
+  transition: 0.2s;
+}
+
+.panel-right li:hover {
+  background: rgba(30,30,60,0.95);
+
+  border-color: rgba(111,0,255,0.28);
+}
+
+/* NASA MAP */
+.nasa-map-container {
+  width: 100%;
+
+  max-width: 1300px;
+
+  margin: 40px auto;
+
+  padding: 24px;
+
+  border-radius: 26px;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(180deg, #060511, #0b0520);
+
+  border: 1px solid rgba(99, 102, 241, 0.12);
+
+  box-shadow:
+    0 0 25px rgba(111, 0, 255, 0.18),
+    0 0 60px rgba(76, 201, 255, 0.08);
+}
+
+.nasa-map-container h2 {
+  text-align: center;
+
+  color: #7dd3fc;
+
+  margin-bottom: 18px;
+}
+
+.nasa-iframe {
+  width: 100%;
+
+  height: 760px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  display: block;
+
+  box-shadow:
+    0 0 30px rgba(76, 201, 255, 0.25),
+    0 0 80px rgba(111, 0, 255, 0.15);
+}
+
+.iframe-note {
+  text-align: center;
+
+  margin-top: 12px;
+
+  color: #94a3b8;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050510;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#6f00ff, #4cc9ff);
+  border-radius: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+  .big-bottom-section {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-left img {
+    height: auto;
+  }
+
+  .nasa-iframe {
+    height: 500px;
+  }
+
   .iss-card {
     position: static;
+
     width: 100%;
-    margin-top: 12px;
+
+    margin-bottom: 20px;
   }
 }
-
