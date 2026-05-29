@@ -1,4 +1,6 @@
-/* App.css */
+/* ==========================================================================
+   1. ԳԼԽԱՎՈՐ ՄԱԿԱՐԴԱԿ (GLOBAL STYLES & VARIABLES)
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+Armenian:wght@400;600;700&display=swap');
 
 :root {
@@ -14,17 +16,31 @@
   --danger: #ef4444;
 }
 
+/* Բոլոր էլեմենտների չափսերի ճիշտ հաշվարկ, որ էկրանից դուրս չգան */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden; /* Արգելում է էջին դեպի աջ ու ձախ տատանվել */
+}
+
 .app-container {
   font-family: 'Noto Sans Armenian', 'Montserrat', sans-serif;
   padding: 40px 20px;
   max-width: 1300px;
   margin: 0 auto;
-  color: var(--text-main);
-  background-color: var(--bg-main);
   min-height: 100vh;
+  width: 100%;
 }
 
-/* Գլխավոր Վահանակ (Glassmorphism Neon Header) */
+/* ==========================================================================
+   2. ՎԵՐՆԱԳԻՐ (HEADER)
+   ========================================================================== */
 .app-header {
   text-align: center;
   background: radial-gradient(circle at top left, #1e3a8a 0%, #0f172a 100%);
@@ -33,10 +49,11 @@
   margin-bottom: 40px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  width: 100%;
 }
 
 .app-header h1 {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: 800;
   background: linear-gradient(to right, #3b82f6, #60a5fa, #10b981);
   -webkit-background-clip: text;
@@ -51,7 +68,9 @@
   font-weight: 400;
 }
 
-/* Նավիգացիա (Futuristic Cyber Menu) */
+/* ==========================================================================
+   3. ՆԱՎԻԳԱՑԻԱ (NAVIGATION)
+   ========================================================================== */
 .app-nav {
   display: flex;
   justify-content: center;
@@ -62,6 +81,7 @@
   margin-bottom: 45px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  flex-wrap: wrap; /* Թույլ է տալիս կոճակներին տեղափոխվել հաջորդ տող */
 }
 
 .nav-button {
@@ -87,7 +107,9 @@
   box-shadow: 0 0 20px var(--primary-glow);
 }
 
-/* Բովանդակության Բլոկ (Cyber Card) */
+/* ==========================================================================
+   4. ԲՈՎԱՆԴԱԿՈՒԹՅԱՆ ԲԼՈԿ (CONTENT BOX & GRID)
+   ========================================================================== */
 .content-box {
   background-color: var(--bg-card);
   padding: 45px;
@@ -95,6 +117,7 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 20px 50px rgba(0,0,0,0.4);
   animation: slideUp 0.5s ease;
+  width: 100%;
 }
 
 @keyframes slideUp {
@@ -121,16 +144,12 @@
   display: inline-block;
 }
 
+/* Համաչափ 50/50 ցանց ֆիզիկայի բլոկների համար */
 .two-column-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
-}
-
-@media (max-width: 992px) {
-  .two-column-grid {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
 }
 
 .scientific-text {
@@ -141,7 +160,6 @@
   margin-bottom: 25px;
 }
 
-/* Ինֆո Քարտեր */
 .feature-card {
   background-color: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -149,6 +167,7 @@
   border-radius: 16px;
   margin-bottom: 20px;
   transition: transform 0.3s, border-color 0.3s;
+  width: 100%;
 }
 
 .feature-card:hover {
@@ -163,11 +182,13 @@
   margin-bottom: 12px;
 }
 
-/* Պրոֆեսիոնալ Մատրիցային Աղյուսակ */
+/* ==========================================================================
+   5. ԱՂՅՈՒՍԱԿՆԵՐ (TABLES)
+   ========================================================================== */
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 25px;
+  margin-top: 35px;
   font-size: 15px;
   border-radius: 12px;
   overflow: hidden;
@@ -186,28 +207,42 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   background-color: rgba(255, 255, 255, 0.01);
   color: #cbd5e1;
+  text-align: center;
 }
 
 .data-table tr:hover td {
   background-color: rgba(255, 255, 255, 0.04);
 }
 
-/* Ինտերակտիվ Սխեմաներ */
+/* ==========================================================================
+   6. ՍԽԵՄԱՆԵՐ ԵՎ SVG (DIAGRAMS)
+   ========================================================================== */
 .schema-container {
   background-color: #0b111e;
   padding: 30px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   margin-top: 40px;
+  width: 100%;
+}
+
+.schema-container h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 .svg-graphic {
   background-color: #0d1527;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.03);
+  display: block;
+  width: 100%; /* Ճկուն լայնություն */
+  height: auto; /* Ավտոմատ բարձրություն */
 }
 
-/* Պրոգրես Բարեր */
+/* ==========================================================================
+   7. ՄԱՐԶՈՒՄՆԵՐ, ԱՇԽԱՐՀԱԳՐՈՒԹՅՈՒՆ ԵՎ ՖՈՒՏԵՐ
+   ========================================================================== */
 .progress-container {
   margin-bottom: 25px;
 }
@@ -233,23 +268,44 @@
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
-/* Աշխարհագրական Մոդուլներ */
+.pulse-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border-left: 4px solid var(--danger);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .geo-panel {
   padding: 30px;
   border-radius: 16px;
   background: linear-gradient(145deg, #131a26, #0f141d);
   border: 1px solid rgba(255, 255, 255, 0.04);
+  width: 100%;
 }
 
-.badge-shirak {
-  border-left: 5px solid var(--warning);
+.badge-shirak { border-left: 5px solid var(--warning); }
+.badge-gyumri { border-left: 5px solid var(--primary); }
+
+.info-list {
+  list-style: none;
+  margin-top: 15px;
+}
+.info-list li {
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+}
+.info-list li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
 }
 
-.badge-gyumri {
-  border-left: 5px solid var(--primary);
-}
-
-/* Ստորագիր (Footer) */
 .app-footer {
   text-align: center;
   margin-top: 80px;
@@ -257,27 +313,85 @@
   font-size: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 35px;
+  width: 100%;
 }
 
-
-
-/* ==========================================
-   ԱԴԱՊՏԻՎ ՈՃԵՐ ՄՈԲԻԼ ՍԱՐՔԵՐԻ ՀԱՄԱՐ (RESPONSIVE)
-   ========================================== */
+/* ==========================================================================
+   8. ԳԵՐ-ԱԴԱՊՏԻՎ ՄՈԲԻԼ ՈՃԵՐ (HARD RESPONSIVE OVERRIDE)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .two-column-grid {
+    grid-template-columns: 1fr !important; /* Ցանցը դառնում է 1 սյունակ խոշոր պլանշետների/հեռախոսների վրա */
+    gap: 20px;
+  }
+}
 
 @media (max-width: 768px) {
-  /* ... քո մնացած մոբիլ կոդը ... */
+  .app-container {
+    padding: 15px 10px !important;
+  }
 
-  /* Ուղղում SVG-ների համար, որ հաստատ տեղավորվեն էկրանին */
+  .app-header {
+    padding: 35px 15px !important;
+    border-radius: 16px !important;
+  }
+
+  .app-header h1 {
+    font-size: 1.6rem !important;
+  }
+
+  .app-header p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Նավիգացիան հեռախոսի վրա դառնում է ուղղահայաց հարմար ցուցակ */
+  .app-nav {
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 6px !important;
+  }
+
+  .nav-button {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 12px 10px !important;
+    font-size: 13px !important;
+  }
+
+  .content-box {
+    padding: 20px 12px !important;
+    border-radius: 16px !important;
+  }
+
+  .section-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 20px !important;
+  }
+
+  .scientific-text {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+  }
+
+  /* Աղյուսակի պաշտպանություն էկրանից դուրս թռչելուց */
+  .data-table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* SVG-ների կատարյալ մասշտաբավորում */
   .svg-graphic {
     width: 100% !important;
     height: auto !important;
-    max-height: 220px; /* Չափսը կրճատում ենք, որ հեռախոսի մեջ սիրուն նստի */
+    max-height: 200px !important; /* Թույլ չի տալիս մեծանալ հեռախոսի մեջ */
   }
-  
-  /* Ուղղում բլոկների համար, որ կողքերից դուրս չգան */
-  .schema-container, .feature-card {
-    max-width: 100% !important;
-    box-sizing: border-box;
+
+  .schema-container {
+    padding: 12px !important;
+    border-radius: 12px !important;
   }
 }
