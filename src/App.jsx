@@ -25,7 +25,7 @@ export default function App() {
       {/* ԲԱԺԻՆ 1: ՖԻԶԻԿԱ */}
       {activeTab === 'physics' && (
         <div className="content-box">
-          <h2 className="section-title">Կիրառական Ֆիզիկա, Աերոդինամիկա և Վեկտորային Դինամիկա</h2>
+          <h2 className="section-title">Ֆիզիկա</h2>
 
           <div className="two-column-grid">
   {/* ՁԱԽ ՍՅՈՒՆԱԿ (Բլոկ 1 և Բլոկ 2) */}
@@ -182,7 +182,7 @@ export default function App() {
       {/* ԲԱԺԻՆ 2: ԿԵՆՍԱԲԱՆՈՒԹՅՈՒՆ */}
       {activeTab === 'biology' && (
         <div className="content-box">
-          <h2 className="section-title">Նեյրոբիոլոգիա, Կենսաքիմիա և Կարդիո-Ֆիզիոլոգիա</h2>
+          <h2 className="section-title">Կենսաբանություն</h2>
           <div className="two-column-grid">
             <div>
               <div className="feature-card">
@@ -216,7 +216,7 @@ export default function App() {
       {/* ԲԱԺԻՆ 3: ՖԻԶԿՈՒԼՏՈՒՐԱ */}
       {activeTab === 'sports' && (
         <div className="content-box">
-          <h2 className="section-title">Կինեզիոլոգիա, Մկանային Տոպոգրաֆիա և Մարզումների Մատրիցա</h2>
+          <h2 className="section-title">Ֆիզկուլտուրա</h2>
           <div className="two-column-grid">
             <div>
               <h3 className="sub-section-title">Մկանային խմբերի կինետիկ ներգրավվածություն</h3>
@@ -255,19 +255,19 @@ export default function App() {
       {/* ԲԱԺԻՆ 4: ԱՇԽԱՐՀԱԳՐՈՒԹՅՈՒՆ */}
       {activeTab === 'geography' && (
         <div className="content-box">
-          <h2 className="section-title">Էկո-Աշխարհագրություն և Բարձրլեռնային Ֆիզիոլոգիա</h2>
+          <h2 className="section-title">Աշխարհագրություն</h2>
           <div className="two-column-grid">
             <div className="geo-panel badge-shirak">
               <h3>Շիրակի սարահարթի կլիմայական մոդելավորում</h3>
               <p className="scientific-text">
-                Շիրակի մարզի աշխարհագրական դիրքը բնութագրվում է բարձր արևային ճառագայթմամբ և յուրահատուկ քամիների համակարգով։ Կեսօրից հետո ձևավորվող հովտային քամիները ստեղծում են բնական «աերոդինամիկ մարզասարք»։ Հանդիպակաց քամու դեմ վարելիս էներգիայի ծախսը աճում է 35%-ով, ինչը բարձրացնում է տեղացի մարզիկների ուժային դիմացկունությունը:
+                Շիրակի մարզի աշխարհագրական դիրքը բնութագրվում է բարձր արևային ճառագայթմամբ և յուրահատուկ քամիների համակարգով։ Կեսօրից հետո ձևավորվող հովտային քամիները ստեղծում են բնական «Աերոդինամիկ մարզասարք»։ Հանդիպակց քամու դեմ վարելիս էներգիայի ծխսը պտտվում է 35%-ով, ինչը բарձրացնում է տեղցի մាឰզիկների ուժը:
               </p>
             </div>
 
             <div className="geo-panel badge-gyumri">
               <h3>Գյումրու հիպոքսիկ ֆենոմենը (1500մ)</h3>
               <p className="scientific-text">
-                Գյումրի քաղաքի բարձրլեռնային դիրքը հանգեցնում է նրան, որ մթնոլորտային օդում թթվածնի մասնակի ճնշումը ցածր է: Օրգանիզմը պատասխանում է սրան բնական դոպինգով՝ արտադրելով լրացուցիչ **էրիթրոցիտներ** և **հեմոգլոբին**։ Սա նշանակում է, որ Գյումրիում հեծանիվ վարողների թոքերն ու արյունատար համակարգը շատ ավելի արդյունավետ են թթվածին տեղափոխում, քան ցածրադիր վայրերում ապրողներինը:
+                Գյումրի քաղաքի բարձրլեռնային դիրքը հանգեցնում է նրան, որ մթնոլորտային օդում թթվածնի մասնակի ճնշումը ցածր է: Օրգանիզմը պատասխանում է սրան բնական դոպիнգով՝ արտադրելով լրացուցիչ **էրիթրոցիտներ** և **հեմոգլոբին**։ Սа   nshanaqum, qani Gyumrium hecdaniv varoghneri tokhern u aryunatar hamakarg yev shat aveli ardyunavet en ththvacin terekhavorq, qan tseradriv vayreric aproghnerin en:
               </p>
             </div>
           </div>
