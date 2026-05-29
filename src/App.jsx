@@ -15,11 +15,11 @@ export default function App() {
 
       {/* Նավիգացիոն համակարգ */}
       <nav className="app-nav">
-        <button className={`nav-button ${activeTab === 'physics' ? 'active' : ''}`} onClick={() => setActiveTab('physics')}>Բիոմեխանիկա և Ֆիզիկա</button>
-        <button className={`nav-button ${activeTab === 'biology' ? 'active' : ''}`} onClick={() => setActiveTab('biology')}>Նեյրոբիոլոգիա և Անատոմիա</button>
-        <button className={`nav-button ${activeTab === 'sports' ? 'active' : ''}`} onClick={() => setActiveTab('sports')}>Կինեզիոլոգիա և Մարզումներ</button>
-        <button className={`nav-button ${activeTab === 'geography' ? 'active' : ''}`} onClick={() => setActiveTab('geography')}>Էկո-Աշխարհագրություն</button>
-        <button className={`nav-button ${activeTab === 'summary' ? 'active' : ''}`} onClick={() => setActiveTab('summary')}>Գիտական Վերլուծություն</button>
+        <button className={`nav-button ${activeTab === 'physics' ? 'active' : ''}`} onClick={() => setActiveTab('physics')}>Ֆիզիկա</button>
+        <button className={`nav-button ${activeTab === 'biology' ? 'active' : ''}`} onClick={() => setActiveTab('biology')}>Կենսաբանություն</button>
+        <button className={`nav-button ${activeTab === 'sports' ? 'active' : ''}`} onClick={() => setActiveTab('sports')}>Ֆիզկուլտուրա</button>
+        <button className={`nav-button ${activeTab === 'geography' ? 'active' : ''}`} onClick={() => setActiveTab('geography')}>Աշխարհագրություն</button>
+        <button className={`nav-button ${activeTab === 'summary' ? 'active' : ''}`} onClick={() => setActiveTab('summary')}>Եզրակացություն</button>
       </nav>
 
       {/* ԲԱԺԻՆ 1: ՖԻԶԻԿԱ */}
