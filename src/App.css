@@ -1,0 +1,260 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+Armenian:wght@400;600;700&display=swap');
+
+:root {
+  --bg-main: #090d16;
+  --bg-card: #131a26;
+  --bg-accent: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.3);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+.app-container {
+  font-family: 'Noto Sans Armenian', 'Montserrat', sans-serif;
+  padding: 40px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  min-height: 100vh;
+}
+
+/* Գլխավոր Վահանակ (Glassmorphism Neon Header) */
+.app-header {
+  text-align: center;
+  background: radial-gradient(circle at top left, #1e3a8a 0%, #0f172a 100%);
+  padding: 60px 30px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #3b82f6, #60a5fa, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Նավիգացիա (Futuristic Cyber Menu) */
+.app-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--bg-card);
+  padding: 8px;
+  border-radius: 16px;
+  margin-bottom: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.nav-button {
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-muted);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-button:hover {
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.nav-button.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* Բովանդակության Բլոկ (Cyber Card) */
+.content-box {
+  background-color: var(--bg-card);
+  padding: 45px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.section-title::before {
+  content: '';
+  width: 6px;
+  height: 35px;
+  background: var(--primary);
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+}
+
+@media (max-width: 992px) {
+  .two-column-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scientific-text {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #cbd5e1;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+/* Ինֆո Քարտեր */
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+/* Պրոֆեսիոնալ Մատրիցային Աղյուսակ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  font-size: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.data-table th {
+  background-color: var(--bg-accent);
+  color: #ffffff;
+  padding: 16px;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.data-table td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.01);
+  color: #cbd5e1;
+}
+
+.data-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Ինտերակտիվ Սխեմաներ */
+.schema-container {
+  background-color: #0b111e;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 40px;
+}
+
+.svg-graphic {
+  background-color: #0d1527;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Պրոգրես Բարեր */
+.progress-container {
+  margin-bottom: 25px;
+}
+
+.progress-container label {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.progress-bar-bg {
+  background: #1e293b;
+  height: 14px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Աշխարհագրական Մոդուլներ */
+.geo-panel {
+  padding: 30px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #131a26, #0f141d);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.badge-shirak {
+  border-left: 5px solid var(--warning);
+}
+
+.badge-gyumri {
+  border-left: 5px solid var(--primary);
+}
+
+/* Ստորագիր (Footer) */
+.app-footer {
+  text-align: center;
+  margin-top: 80px;
+  color: var(--text-muted);
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 35px;
+}
