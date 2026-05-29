@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 export default function App() {
+  <head><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>
   const [activeTab, setActiveTab] = useState('physics');
 
   return (

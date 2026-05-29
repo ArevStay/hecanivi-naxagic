@@ -266,114 +266,18 @@
    ========================================== */
 
 @media (max-width: 768px) {
-  /* 1. Էջի ընդհանուր արտաքին բացվածքները */
-  .app-container {
-    padding: 15px 10px;
-  }
+  /* ... քո մնացած մոբիլ կոդը ... */
 
-  /* 2. Գլխավոր վերնագրի հատված */
-  .app-header {
-    padding: 35px 20px;
-    border-radius: 16px;
-    margin-bottom: 25px;
-  }
-
-  .app-header h1 {
-    font-size: 1.8rem; /* Փոքրացնում ենք տառաչափը, որ հեռախոսի էկրանից դուրս չգա */
-    line-height: 1.4;
-  }
-
-  .app-header p {
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-
-  /* 3. Նավիգացիոն մենյու (Կոճակները դառնում են ավելի մատչելի) */
-  .app-nav {
-    flex-direction: column; /* Կոճակները դասավորվում են իրար տակ */
-    gap: 6px;
-    padding: 6px;
-    border-radius: 14px;
-    margin-bottom: 30px;
-  }
-
-  .nav-button {
-    width: 100%; /* Կոճակները ձգվում են ամբողջ լայնությամբ */
-    padding: 12px 16px;
-    font-size: 13.5px;
-    text-align: center;
-  }
-
-  /* 4. Բովանդակության գլխավոր բլոկը */
-  .content-box {
-    padding: 20px 15px; /* Նվազեցնում ենք ներքին դատարկ տարածությունները */
-    border-radius: 16px;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    gap: 10px;
-  }
-  
-  .section-title::before {
-    height: 25px;
-  }
-
-  /* 5. Ցանցեր (Grid) և Տեքստեր */
-  .two-column-grid {
-    grid-template-columns: 1fr; /* Բոլոր սյունակները դառնում են 1 սյունակ */
-    gap: 20px;
-  }
-
-  .scientific-text {
-    font-size: 14.5px; /* Ավելի հարմար տեքստային չափս հեռախոսով կարդալու համար */
-    line-height: 1.7;
-    text-align: left; /* Մոբիլ տարբերակում ձախակողմյան դասավորությունը ավելի գեղեցիկ է */
-  }
-
-  .feature-card {
-    padding: 18px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-  }
-
-  /* 6. Ադապտիվ Աղյուսակ (Հորիզոնական սքրոլ, որ էջը չջարդվի) */
-  .data-table {
-    display: block;
-    width: 100%;
-    overflow-x: auto; /* Եթե աղյուսակը մեծ լինի, հնարավոր կլինի թերթել դեպի աջ */
-    -webkit-overflow-scrolling: touch;
-    font-size: 13px;
-  }
-
-  .data-table th, .data-table td {
-    padding: 10px 8px;
-    white-space: nowrap; /* Արժեքները չեն տեղափոխվում նոր տող */
-  }
-
-  /* 7. Սխեմաներ և SVG Գրաֆիկա */
-  .schema-container {
-    padding: 15px;
-    border-radius: 14px;
-    margin-top: 25px;
-  }
-
+  /* Ուղղում SVG-ների համար, որ հաստատ տեղավորվեն էկրանին */
   .svg-graphic {
-    height: auto; /* Թույլ է տալիս SVG-ին պահպանել իր համամասնությունները */
-    min-height: 200px; /* Սահմանափակում ենք նվազագույն բարձրությունը */
-  }
-
-  /* 8. Աշխարհագրական պանելներ */
-  .geo-panel {
-    padding: 20px;
-    border-radius: 12px;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px; /* Չափսը կրճատում ենք, որ հեռախոսի մեջ սիրուն նստի */
   }
   
-  /* 9. Ստորագիր (Footer) */
-  .app-footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    font-size: 12px;
+  /* Ուղղում բլոկների համար, որ կողքերից դուրս չգան */
+  .schema-container, .feature-card {
+    max-width: 100% !important;
+    box-sizing: border-box;
   }
 }
